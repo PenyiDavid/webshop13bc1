@@ -6,5 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class ProductType extends Model
 {
-    //
+    protected $fillable = ['product_type_name'];
+
+    public function products(){
+        return $this->hasMany(Product::class);
+    }
 }
